@@ -17,6 +17,7 @@ Run Zookeeper from Kafka directory:  ( Windows command )
 ![zookeeper-server-start](https://github.com/user-attachments/assets/2715f5d1-9bab-404c-830e-6b353e8496f4)
 
 ✔ Zookeeper starts on port 2181 by default.
+
 📌 Step 2: Start Kafka Broker / Server
 In a new CMD window, create a topic:
 Once Zookeeper is running, start the Kafka broker: (Windows command)
