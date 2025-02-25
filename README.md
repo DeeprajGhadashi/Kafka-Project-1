@@ -24,3 +24,41 @@ Once Zookeeper is running, start the Kafka broker: (Windows command)
 ![kafka-server-start](https://github.com/user-attachments/assets/4a5f68e3-ecba-4538-9488-f00ce27f8221)
 
 ✔ Kafka runs on port 9092 by default.
+
+Test On PostMan
+![image](https://github.com/user-attachments/assets/18783d69-d781-49ec-a3dc-44df43d0c5db)
+
+#IPM application.propertice.java (deliveryboy) 
+
+spring.application.name=deliveryboy
+
+## Kafka Broker Address
+spring.kafka.bootstrap-servers=localhost:9092
+
+## Kafka Producer Configuration
+spring.kafka.producer.key-serializer=org.apache.kafka.common.serialization.StringSerializer
+spring.kafka.producer.value-serializer=org.apache.kafka.common.serialization.StringSerializer
+
+## Kafka Admin (for topic creation)
+spring.kafka.admin.auto-create=true
+
+#spring.kafka.admin.properties.request.timeout.ms=60000
+#spring.kafka.admin.properties.retry.backoff.ms=50
+
+#IPM application.propertice.java (enduser)
+
+spring.application.name=enduser
+
+## Consumer Configuration
+server.port=8081
+## Kafka Broker Address
+spring.kafka.consumer.bootstrap-servers=localhost:9092
+
+## Kafka Producer Configuration
+spring.kafka.consumer.key-serializer=org.apache.kafka.common.serialization.StringSerializer
+spring.kafka.consumer.value-serializer=org.apache.kafka.common.serialization.StringSerializer
+
+
+## Kafka Consumer Configuration (if needed)
+spring.kafka.consumer.group-id=deliveryboy-group-id
+spring.kafka.consumer.auto-offset-reset=earliest
